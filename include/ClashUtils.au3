@@ -21,12 +21,10 @@ Func AntiIdle()
    Sleep(500)
 EndFunc
 
-Func IsGameDisconnected()
-   ActivateClashOfClans()
-   $checkColor = PixelGetColor(470, 50)
-   If $checkColor = 15660280 Then
-	  Return True
-   Else
-	  Return False
-   EndIf
+Func IdleForMinutes($timeInMinutes)
+   $timeToWait = $timeInMinutes
+   While $timeToWait > 0
+	  $timeToWait = $timeToWait - 1
+	  AntiIdle()
+   WEnd
 EndFunc
