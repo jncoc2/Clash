@@ -2,7 +2,7 @@ Const $BLUESTACKS_WINDOW_TITLE = "BlueStacks App Player"
 
 global $paused = False
 
-Func SetWindowPositionAndSize($windowTitle, $x, $y, $width, $height)
+Func SetWindowPositionAndSize($windowTitle, $x, $y, $width = 908, $height = 599)
    WinMove($windowTitle, "", $x, $y, $width, $height)
    Sleep(1000)
 EndFunc
@@ -17,7 +17,7 @@ EndFunc
 Func AntiIdle()
    if Not $paused Then
 	  ActivateClashOfClans()
-	  SetWindowPositionAndSize($BLUESTACKS_WINDOW_TITLE, 0, 0, 908, 599)
+	  SetWindowPositionAndSize($BLUESTACKS_WINDOW_TITLE, 0, 0)
 	  MouseClickDrag("left", 10, 60, 10, 70, 1)
 	  MouseClickDrag("left", 10, 70, 10, 60, 1)
    EndIf
