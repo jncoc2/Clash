@@ -32,6 +32,14 @@ Func IdleForMinutes($timeInMinutes)
    WEnd
 EndFunc
 
+Func SecondsElapsedSince($startTime)
+   $start = StringSplit($startTime, ":")
+   $now = StringSplit(_Now(), ":")
+   $startSeconds = $start[3] + $start[2]*60 + $start[1]*3600
+   $nowSeconds = $now[3] + $now[2]*60 + $now[1]*3600
+   return $nowSeconds - $startSeconds
+EndFunc
+
 Func TogglePause()
    $paused = Not $paused
 EndFunc
